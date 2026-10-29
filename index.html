@@ -167,6 +167,42 @@ img{max-width:100%;height:auto}
 .narr h3{font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--flow);margin-bottom:12px}
 .narr p{color:var(--ink-2)}
 
+/* phone row stage */
+.stage.mob{width:min(1180px,92vw)}
+.phrow{display:flex;gap:clamp(12px,2.2vw,32px);justify-content:center;align-items:flex-start;width:100%!important}
+.ph{flex:0 1 22%;border-radius:clamp(18px,2.4vw,34px);padding:clamp(4px,.5vw,7px);background:#121318;box-shadow:0 50px 90px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08)}
+.ph img{display:block;width:100%;height:auto;border-radius:clamp(14px,2vw,28px)}
+.ph:nth-child(2){margin-top:6%}.ph:nth-child(3){margin-top:2%}.ph:nth-child(4){margin-top:8%}
+/* more product work */
+.more{padding-block:14vh 6vh}
+.more-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:end;margin-bottom:56px}
+.more-head .big{font-size:clamp(56px,9vw,150px)}
+.more-head p{color:var(--ink-2);max-width:44ch;font-size:18px}
+.mgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 32px}
+.mcard{display:grid;gap:8px;align-content:start;min-width:0}
+.mcard button{all:unset;cursor:zoom-in;display:block;margin-bottom:10px}
+.mcard button:focus-visible .mframe{outline:2px solid var(--flow);outline-offset:4px}
+.mframe{display:block;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 40px 70px -34px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.08);transition:transform .6s cubic-bezier(.2,.7,.2,1), box-shadow .4s}
+.mframe .bar{height:22px;display:flex;gap:5px;align-items:center;padding:0 10px;background:#EEF0F2}
+.mframe .bar i{width:7px;height:7px;border-radius:50%;background:#CDD1D6;display:block}
+.mframe.dk .bar{background:#141821}.mframe.dk .bar i{background:#2C3343}
+.mframe img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 0;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.mcard button:hover .mframe{transform:translateY(-8px) rotate(-.6deg);box-shadow:0 50px 90px -30px rgba(124,140,255,.35),0 0 0 1px rgba(124,140,255,.5)}
+.mcard button:hover .mframe img{transform:scale(1.05)}
+.mk{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--flow)}
+.mcard b{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:30px;line-height:.95}
+.mcard p{color:var(--ink-2);font-size:15.5px;max-width:40ch}
+.tile .im img{aspect-ratio:4/3;object-fit:cover}
+a.tile .im::after{content:"Behance ↗"}
+.bh-link{display:inline-flex;gap:10px;align-items:center;margin-top:36px;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);padding:12px 18px;border-radius:999px;color:var(--ink)}
+.bh-link:hover{border-color:var(--flow);color:var(--flow)}
+@media (max-width:900px){
+  .phrow{gap:10px}.ph{flex-basis:46%}.ph:nth-child(n+3){display:none}.ph:nth-child(2){margin-top:10%}
+  .more-head{grid-template-columns:minmax(0,1fr)}
+  .mgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px 18px}
+}
+@media (max-width:600px){ .mgrid{grid-template-columns:minmax(0,1fr)} .more-head .big{font-size:13.5vw} }
+
 /* process (horizontal) */
 .process{position:relative}
 .proc-head{padding-block:12vh 6vh}
@@ -338,7 +374,7 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
       <div><b data-count="15">0</b><span>years designing digital products, since 2009</span></div>
       <div><b data-count="6">0</b><span>companies, now Senior UI/UX Designer at Naviquis</span></div>
       <div><b data-count="2">0</b><span>design systems in this portfolio, light and dark</span></div>
-      <div><b data-count="18">0</b><span>earlier apps, sites and brands from 2012 to 2021</span></div>
+      <div><b data-count="10">0</b><span>case studies here, plus 6 more products and 22 archive pieces</span></div>
     </div>
   </section>
 
@@ -358,8 +394,13 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
       <li><a href="#p-gamify"><span class="n">02</span><span class="t">GamifyPRO</span><span class="d">Engagement platform · Web</span></a></li>
       <li><a href="#p-nav"><span class="n">03</span><span class="t">Naviquis Blue</span><span class="d">Credentialing platform · Design system</span></a></li>
       <li><a href="#p-evs"><span class="n">04</span><span class="t">ActiveEVS</span><span class="d">Operations · Web + mobile</span></a></li>
-      <li><a href="#p-cred"><span class="n">05</span><span class="t">Credentialing Pro</span><span class="d">Enrollment queue · Web</span></a></li>
-      <li><a href="#p-web"><span class="n">06</span><span class="t">Naviquis.com</span><span class="d">Marketing website</span></a></li>
+      <li><a href="#p-tooty"><span class="n">05</span><span class="t">Tooty</span><span class="d">Super app · Mobile</span></a></li>
+      <li><a href="#p-napleton"><span class="n">06</span><span class="t">Napleton</span><span class="d">Automotive CRM · Web</span></a></li>
+      <li><a href="#p-e1"><span class="n">07</span><span class="t">E1 Pulse suite</span><span class="d">Revenue analytics · Web + PDF</span></a></li>
+      <li><a href="#p-iylus"><span class="n">08</span><span class="t">Iylus</span><span class="d">Smart home security · Mobile</span></a></li>
+      <li><a href="#p-cred"><span class="n">09</span><span class="t">Credentialing Pro</span><span class="d">Enrollment queue · Web</span></a></li>
+      <li><a href="#p-web"><span class="n">10</span><span class="t">Naviquis.com</span><span class="d">Marketing website</span></a></li>
+      <li><a href="#more"><span class="n">+6</span><span class="t">More product work</span><span class="d">Web apps, websites, mobile</span></a></li>
     </ol>
   </section>
 
@@ -441,6 +482,90 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
     </div>
   </article>
 
+  <!-- 05 Tooty -->
+  <article class="proj" id="p-tooty" data-bg="#1A0F08">
+    <div class="scene"><div class="ghost">Tooty</div>
+      <div class="stage mob">
+        <div class="main phrow">
+          <div class="ph"><img src="img/tooty-home.webp" width="376" height="812" alt="Tooty home screen with featured stores and restaurants" loading="lazy"></div>
+          <div class="ph"><img src="img/tooty-rest.webp" width="376" height="812" alt="Restaurant page with discounts and popular dishes" loading="lazy"></div>
+          <div class="ph"><img src="img/tooty-track.webp" width="376" height="812" alt="Order placed tracking screen with arrival estimate" loading="lazy"></div>
+          <div class="ph"><img src="img/tooty-classifieds.webp" width="376" height="812" alt="Second-hand marketplace with cars, mobiles and cameras" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap info" data-node="0.92">
+      <div class="info-top"><div><span class="mono">05 · Super app, mobile</span><h2>Tooty</h2></div><p>One app for food delivery, grocery shopping and buying or selling second-hand goods.</p></div>
+      <dl class="facts"><div><dt>Product</dt><dd>Tooty</dd></div><div><dt>Role</dt><dd>Mobile UX and UI</dd></div><div><dt>Platform</dt><dd>iOS and Android</dd></div><div><dt>Scope</dt><dd>60+ screens</dd></div></dl>
+      <div class="narr">
+        <div><h3>Challenge</h3><p>Three very different services had to live in one app without people getting lost: ordering dinner, filling a grocery cart and posting a used car for sale.</p></div>
+        <div><h3>Approach</h3><p>One home with clear entry points, then each service keeps its own simple flow. Shared parts (search, cart, checkout, addresses, order tracking) work the same everywhere.</p></div>
+        <div><h3>Delivered</h3><p>Onboarding, language and OTP sign-in, food and mart home, restaurant and product pages, cart and checkout, live order tracking, classifieds with ad posting, profile and wishlist.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 06 Napleton -->
+  <article class="proj" id="p-napleton" data-bg="#0F1230">
+    <div class="scene"><div class="ghost">Napleton</div>
+      <div class="stage">
+        <div class="browser main"><div class="bar"><i></i><i></i><i></i><span>Napleton · Dashboard</span></div><div class="vp"><img src="img/napleton-dash.webp" width="1596" height="900" alt="Dealership CRM dashboard with earnings, appointments and customer charts" loading="lazy"></div></div>
+        <div class="browser over"><div class="bar"><i></i><i></i><i></i><span>Leases due</span></div><div class="vp"><img src="img/napleton-leases.webp" width="1596" height="900" alt="Leases due shown as customer cards with due dates and assigned rep" loading="lazy"></div></div>
+      </div>
+    </div>
+    <div class="wrap info" data-node="0.08">
+      <div class="info-top"><div><span class="mono">06 · Automotive CRM</span><h2>Napleton</h2></div><p>A CRM that helps a car dealership group turn service visits and expiring leases into the next sale.</p></div>
+      <dl class="facts"><div><dt>Client</dt><dd>Napleton Auto Group</dd></div><div><dt>Role</dt><dd>Product design and branding</dd></div><div><dt>Platform</dt><dd>Web app</dd></div><div><dt>Scope</dt><dd>Brand kit + 16 screens</dd></div></dl>
+      <div class="narr">
+        <div><h3>Challenge</h3><p>Sales reps juggle appointments, service reminders and lease end dates across spreadsheets, so customers slip away at the moment they are ready to buy again.</p></div>
+        <div><h3>Approach</h3><p>Put the next action first: who is due, who owns them, and one tap to call or email. Leases and leads switch between a face-first grid and a dense list.</p></div>
+        <div><h3>Delivered</h3><p>Dashboard and admin dashboard, appointments, service and lease due, leads with overview, activities, attachments and timeline, promotions, settings and login.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 07 E1 -->
+  <article class="proj" id="p-e1" data-bg="#07140A">
+    <div class="scene"><div class="ghost">E1 Pulse</div>
+      <div class="stage">
+        <div class="browser dk main"><div class="bar"><i></i><i></i><i></i><span>HDC Program Portal · Summary</span></div><div class="vp"><img src="img/hdc-summary.webp" width="1596" height="900" alt="HDC program portal summary dashboard with conversion rings" loading="lazy"></div></div>
+        <div class="browser dk over"><div class="bar"><i></i><i></i><i></i><span>Pulse · Account management</span></div><div class="vp"><img src="img/pulse-dark.webp" width="1596" height="900" alt="Pulse account management dashboard with screening gauges" loading="lazy"></div></div>
+      </div>
+    </div>
+    <div class="wrap info" data-node="0.92">
+      <div class="info-top"><div><span class="mono">07 · Healthcare revenue analytics</span><h2>E1 Pulse suite</h2></div><p>Dashboards that show hospitals how many uninsured patients were screened, enrolled and paid for.</p></div>
+      <dl class="facts"><div><dt>Client</dt><dd>HealthWare Systems</dd></div><div><dt>Role</dt><dd>Product design</dd></div><div><dt>Platform</dt><dd>Web portal, PDF reports, admin tool</dd></div><div><dt>Scope</dt><dd>4 products, light + dark</dd></div></dl>
+      <div class="narr">
+        <div><h3>Challenge</h3><p>Hospital finance teams need to see millions of dollars of patient accounts move from screening to coverage, filtered by facility, contract and program, and share it as a report.</p></div>
+        <div><h3>Approach</h3><p>A filter bar that states exactly what is selected, big conversion rings for the headline numbers, gauges for cycle time, then the detailed tables. The same layout prints as a PDF report.</p></div>
+        <div><h3>Delivered</h3><p>HDC program portal (summary, enrollment, in-process and timeline dashboards), Pulse account management, OSM report PDFs and the eVitals admin tool for document packages.</p></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 08 Iylus -->
+  <article class="proj" id="p-iylus" data-bg="#0A1622">
+    <div class="scene"><div class="ghost">Iylus</div>
+      <div class="stage mob">
+        <div class="main phrow">
+          <div class="ph"><img src="img/iylus-home.webp" width="376" height="812" alt="Iylus home with armed status, camera views and devices" loading="lazy"></div>
+          <div class="ph"><img src="img/iylus-timeline.webp" width="376" height="812" alt="Motion detection timeline with panic button" loading="lazy"></div>
+          <div class="ph"><img src="img/iylus-qr.webp" width="376" height="812" alt="Pairing a camera by scanning a QR code" loading="lazy"></div>
+          <div class="ph"><img src="img/iylus-paired.webp" width="376" height="812" alt="Door lock paired successfully" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap info" data-node="0.08">
+      <div class="info-top"><div><span class="mono">08 · Smart home security, mobile</span><h2>Iylus</h2></div><p>A home security app that arms the house, shows every camera and pairs new devices in a few taps.</p></div>
+      <dl class="facts"><div><dt>Client</dt><dd>Iylus</dd></div><div><dt>Role</dt><dd>Mobile UX and UI</dd></div><div><dt>Platform</dt><dd>iOS and Android</dd></div><div><dt>Scope</dt><dd>40+ screens</dd></div></dl>
+      <div class="narr">
+        <div><h3>Challenge</h3><p>Setting up cameras and smart locks is where people give up, and in an emergency nobody should hunt for the right button.</p></div>
+        <div><h3>Approach</h3><p>Step-by-step pairing with clear fallbacks (no prompt, not detected, timeout), an armed or disarmed switch at the top of home, and a panic button always one tap away.</p></div>
+        <div><h3>Delivered</h3><p>Sign-in and sign-up, home with 4, 9 or 16 camera channels, device pairing for cameras and door locks, motion timeline with filters, notifications, users and home management.</p></div>
+      </div>
+    </div>
+  </article>
+
   <!-- 04 -->
   <article class="proj" id="p-cred" data-bg="#111A15">
     <div class="scene"><div class="ghost">Credentialing</div>
@@ -450,7 +575,7 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
       </div>
     </div>
     <div class="wrap info" data-node="0.92">
-      <div class="info-top"><div><span class="mono">05 · Enrollment queue</span><h2>Credentialing Pro</h2></div><p>A work queue that catches bad data before anyone starts work on it.</p></div>
+      <div class="info-top"><div><span class="mono">09 · Enrollment queue</span><h2>Credentialing Pro</h2></div><p>A work queue that catches bad data before anyone starts work on it.</p></div>
       <dl class="facts"><div><dt>Product</dt><dd>Credentialing Pro</dd></div><div><dt>Role</dt><dd>UX and UI design</dd></div><div><dt>Platform</dt><dd>Web app</dd></div><div><dt>Scope</dt><dd>Queue + 4 flows</dd></div></dl>
       <div class="narr">
         <div><h3>Challenge</h3><p>Accounts arrive from billing automatically, some with bad data. Staff found out halfway through the work.</p></div>
@@ -468,7 +593,7 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
       </div>
     </div>
     <div class="wrap info" data-node="0.08">
-      <div class="info-top"><div><span class="mono">06 · Marketing website</span><h2>Naviquis.com</h2></div><p>A website for an AI automation company that needed to read as trustworthy, not hyped.</p></div>
+      <div class="info-top"><div><span class="mono">10 · Marketing website</span><h2>Naviquis.com</h2></div><p>A website for an AI automation company that needed to read as trustworthy, not hyped.</p></div>
       <dl class="facts"><div><dt>Client</dt><dd>Naviquis</dd></div><div><dt>Role</dt><dd>Web design</dd></div><div><dt>Platform</dt><dd>Responsive website</dd></div><div><dt>Scope</dt><dd>8 pages</dd></div></dl>
       <div class="narr">
         <div><h3>Challenge</h3><p>Buyers in regulated industries are wary of AI claims. The site had to be specific and calm.</p></div>
@@ -477,6 +602,19 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
       </div>
     </div>
   </article>
+
+  <!-- More product work -->
+  <section class="more wrap" id="more" data-node="0.5">
+    <div class="more-head"><h2 class="big"><span class="ln"><span>More product</span></span><span class="ln"><span>work</span></span></h2><p>Smaller projects and earlier versions from the same Figma files. Click any screen to open it.</p></div>
+    <ul class="mgrid">
+      <li class="mcard"><button type="button" data-full="img/novator-seq.webp" aria-label="View NovatorPRO full size"><span class="mframe"><span class="bar"><i></i><i></i><i></i></span><img src="img/novator-seq.webp" width="1596" height="900" alt="NovatorPRO: A six-step campaign builder: leads, A/B variants for each step, wait times, schedule and options." loading="lazy"></span></button><span class="mk">Email outreach · Web app</span><b>NovatorPRO</b><p>A six-step campaign builder: leads, A/B variants for each step, wait times, schedule and options.</p></li>
+      <li class="mcard"><button type="button" data-full="img/claimset-home.webp" aria-label="View Claimset full size"><span class="mframe"><span class="bar"><i></i><i></i><i></i></span><img src="img/claimset-home.webp" width="1596" height="900" alt="Claimset: Marketing site for a revenue cycle company: home, services, technology platform and contact." loading="lazy"></span></button><span class="mk">Medical billing · Website</span><b>Claimset</b><p>Marketing site for a revenue cycle company: home, services, technology platform and contact.</p></li>
+      <li class="mcard"><button type="button" data-full="img/assist-verify.webp" aria-label="View ActiveAssist full size"><span class="mframe"><span class="bar"><i></i><i></i><i></i></span><img src="img/assist-verify.webp" width="1596" height="900" alt="ActiveAssist: A seven-step Medicaid eligibility submission, from interview to phone, email and ID verification." loading="lazy"></span></button><span class="mk">Eligibility · Web app</span><b>ActiveAssist</b><p>A seven-step Medicaid eligibility submission, from interview to phone, email and ID verification.</p></li>
+      <li class="mcard"><button type="button" data-full="img/prms-dash.webp" aria-label="View Naviquis PRMS full size"><span class="mframe"><span class="bar"><i></i><i></i><i></i></span><img src="img/prms-dash.webp" width="1596" height="900" alt="Naviquis PRMS: The first version of the Naviquis provider platform, before the Naviquis Blue redesign." loading="lazy"></span></button><span class="mk">Credentialing · Web app</span><b>Naviquis PRMS</b><p>The first version of the Naviquis provider platform, before the Naviquis Blue redesign.</p></li>
+      <li class="mcard"><button type="button" data-full="img/xray-card.webp" aria-label="View FraudLens Dental X-rays full size"><span class="mframe"><span class="bar"><i></i><i></i><i></i></span><img src="img/xray-card.webp" width="1596" height="900" alt="FraudLens Dental X-rays: Upload dental X-rays for a family and see AI-labelled findings in the gallery." loading="lazy"></span></button><span class="mk">Dental AI · Mobile</span><b>FraudLens Dental X-rays</b><p>Upload dental X-rays for a family and see AI-labelled findings in the gallery.</p></li>
+      <li class="mcard"><button type="button" data-full="img/hws-billing.webp" aria-label="View HealthWare Billing full size"><span class="mframe"><span class="bar"><i></i><i></i><i></i></span><img src="img/hws-billing.webp" width="1596" height="900" alt="HealthWare Billing: Plan and billing dashboard with revenue, expenses, invoices and the current plan summary." loading="lazy"></span></button><span class="mk">Billing · Web app</span><b>HealthWare Billing</b><p>Plan and billing dashboard with revenue, expenses, invoices and the current plan summary.</p></li>
+    </ul>
+  </section>
 
   <!-- Process -->
   <section class="process" id="process">
@@ -546,7 +684,7 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
 
   <section class="archive" id="archive" data-node="0.5">
     <h2 class="big"><span class="ln"><span>Earlier work</span></span></h2>
-    <p class="sub">Apps, websites and brands from 2012 to 2021. Scroll to steer the rows, hover to slow them, click to open.</p>
+    <p class="sub">Apps, websites and brands from my archive and Behance. Scroll to steer the rows, hover to slow them, click to open.</p>
     <div class="marq">
       <div class="row" id="row1">
         <button class="tile" type="button" data-full="img/pw-fraudlens-app.webp"><span class="im"><img src="img/t-pw-fraudlens-app.webp" width="480" height="360" alt="FraudLens mobile app" loading="lazy"></span><span>Mobile app</span><b>FraudLens</b></button>
@@ -555,6 +693,11 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
         <button class="tile" type="button" data-full="img/pw-iyzil.webp"><span class="im"><img src="img/t-pw-iyzil.webp" width="480" height="360" alt="IYZIL app" loading="lazy"></span><span>Safety app</span><b>IYZIL</b></button>
         <button class="tile" type="button" data-full="img/pw-crypto.webp"><span class="im"><img src="img/t-pw-crypto.webp" width="480" height="360" alt="Crypto landing page" loading="lazy"></span><span>Landing page</span><b>BNB Diamond</b></button>
         <button class="tile" type="button" data-full="img/pw-stonix.webp"><span class="im"><img src="img/t-pw-stonix.webp" width="480" height="360" alt="Stonix website" loading="lazy"></span><span>Real estate</span><b>Stonix</b></button>
+        <a class="tile" href="https://www.behance.net/gallery/207836499/Provider-Enrolment" target="_blank" rel="noopener"><span class="im"><img src="img/bh-active-assist.webp" width="400" height="313" alt="ActiveAssist provider enrolment web app" loading="lazy"></span><span>Enrolment app · Behance</span><b>ActiveAssist</b></a>
+        <a class="tile" href="https://www.behance.net/gallery/150490497/Dental-AI" target="_blank" rel="noopener"><span class="im"><img src="img/bh-dental-ai.webp" width="400" height="313" alt="FraudLens Dental AI mobile app screens" loading="lazy"></span><span>Mobile app · Behance</span><b>Dental AI</b></a>
+        <a class="tile" href="https://www.behance.net/gallery/98100593/Dashboard-Design" target="_blank" rel="noopener"><span class="im"><img src="img/bh-dental-dash.webp" width="400" height="313" alt="Dental claims analytics dashboard" loading="lazy"></span><span>Analytics · Behance</span><b>Dental claims</b></a>
+        <a class="tile" href="https://www.behance.net/gallery/98100531/Dashboard-Design" target="_blank" rel="noopener"><span class="im"><img src="img/bh-multiplan.webp" width="400" height="313" alt="MultiPlan user management dashboard" loading="lazy"></span><span>Dashboard · Behance</span><b>MultiPlan</b></a>
+        <a class="tile" href="https://www.behance.net/gallery/110626855/Website-design" target="_blank" rel="noopener"><span class="im"><img src="img/bh-abode-site.webp" width="400" height="313" alt="Abode home security starter kit website" loading="lazy"></span><span>Website · Behance</span><b>Abode</b></a>
       </div>
       <div class="row" id="row2">
         <button class="tile" type="button" data-full="img/pw-fraudlens-logo.webp"><span class="im"><img src="img/t-pw-fraudlens-logo.webp" width="480" height="360" alt="FraudLens identity" loading="lazy"></span><span>Identity</span><b>FraudLens</b></button>
@@ -563,8 +706,14 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
         <button class="tile" type="button" data-full="img/pw-artstore.webp"><span class="im"><img src="img/t-pw-artstore.webp" width="480" height="360" alt="Art print store" loading="lazy"></span><span>E-commerce</span><b>Art store</b></button>
         <button class="tile" type="button" data-full="img/pw-handyequip.webp"><span class="im"><img src="img/t-pw-handyequip.webp" width="480" height="360" alt="Handy Equip" loading="lazy"></span><span>E-commerce</span><b>Handy Equip</b></button>
         <button class="tile" type="button" data-full="img/pw-fraudlens-stationery.webp"><span class="im"><img src="img/t-pw-fraudlens-stationery.webp" width="480" height="360" alt="FraudLens stationery" loading="lazy"></span><span>Stationery</span><b>FraudLens</b></button>
+        <a class="tile" href="https://www.behance.net/gallery/158376923/Online-Quran-Tutor" target="_blank" rel="noopener"><span class="im"><img src="img/bh-quran.webp" width="400" height="313" alt="Online Quran Tutor logo on a wall mockup" loading="lazy"></span><span>Logo · Behance</span><b>Online Quran Tutor</b></a>
+        <a class="tile" href="https://www.behance.net/gallery/158376783/Whirlator-Technlogies-Logo-Design" target="_blank" rel="noopener"><span class="im"><img src="img/bh-whirlator.webp" width="400" height="313" alt="Whirlator Technologies logo" loading="lazy"></span><span>Logo · Behance</span><b>Whirlator</b></a>
+        <a class="tile" href="https://www.behance.net/gallery/157534903/OnePlus-Apperal-Clothing-Brand-Logo" target="_blank" rel="noopener"><span class="im"><img src="img/bh-oneplus.webp" width="400" height="313" alt="OnePlus Apparel clothing brand logo" loading="lazy"></span><span>Logo · Behance</span><b>OnePlus Apparel</b></a>
+        <a class="tile" href="https://www.behance.net/gallery/220197193/Business-Card-Design-for-Travel-and-Tour-Company" target="_blank" rel="noopener"><span class="im"><img src="img/bh-travel-card.webp" width="400" height="313" alt="Business card for a travel and tour company" loading="lazy"></span><span>Print · Behance</span><b>Ali &amp; Obaid Travels</b></a>
+        <a class="tile" href="https://www.behance.net/gallery/154077959/Adventure-t-shirt-and-mug-design" target="_blank" rel="noopener"><span class="im"><img src="img/bh-adventure.webp" width="400" height="313" alt="Adventure t-shirt design" loading="lazy"></span><span>Merch · Behance</span><b>Adventure tee</b></a>
       </div>
     </div>
+    <a class="bh-link" href="https://www.behance.net/ahsanzaheer" target="_blank" rel="noopener">See all 37 projects on Behance ↗</a>
   </section>
 
   <section class="xp" id="experience" data-node="0.92">
@@ -663,6 +812,12 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
       }});
     });
 
+    // more product work cards
+    G.utils.toArray('.mcard').forEach(function(c, i){
+      G.from(c, {y:80, opacity:0, rotate:(i%3-1)*2, duration:1, ease:'power3.out', delay:(i%3)*.08, scrollTrigger:{trigger:c, start:'top 92%'}});
+    });
+    G.from('.more-head p', {y:24, opacity:0, duration:.8, scrollTrigger:{trigger:'.more-head', start:'top 85%'}});
+
     // capabilities, facts, narratives, lists
     G.utils.toArray('.cap li, .idx li, .roles li, .ai-cols li, .skills > div').forEach(function(el){
       G.from(el, {y:28, opacity:0, duration:.8, ease:'power3.out', scrollTrigger:{trigger:el, start:'top 92%'}});
@@ -685,6 +840,8 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
         if (over) tl.fromTo(over, {x:'40vw', y:'20vh', opacity:0}, {x:0, y:0, opacity:1, duration:.8, ease:'power2.out'}, .45);
         if (phones.length) tl.fromTo(phones, {y:'70vh'}, {y:0, duration:.8, stagger:.12, ease:'power2.out'}, .4);
         if (lens) tl.fromTo(lens, {x:'-30vw', opacity:0}, {x:0, opacity:1, duration:.7, ease:'power2.out'}, .5);
+        var phs = scene.querySelectorAll('.ph');
+        if (phs.length) tl.fromTo(phs, {y:'45vh', rotate:function(i){ return (i-1.5)*4; }}, {y:0, rotate:0, duration:.9, stagger:.1, ease:'power3.out'}, .1);
         tl.to(ghost, {yPercent:-30, duration:.6, ease:'none'}, 1);
         if (pr.id === 'p-web'){ tl.fromTo('#webimg', {objectPosition:'50% 0%'}, {objectPosition:'50% 100%', duration:.9, ease:'none'}, .7); }
       } else {
