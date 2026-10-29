@@ -2,7 +2,15 @@
 
 Personal portfolio of Ahsan Zaheer, Senior UI/UX Designer.
 
-A single static page (HTML, CSS and a little JavaScript with GSAP from cdnjs). No build step.
+A static site with no build step. GSAP and ScrollTrigger load from cdnjs.
+
+## Structure
+```
+index.html      page markup
+css/style.css   all styles
+js/main.js      scroll animations, counters, lightbox, header
+img/            screenshots and photos (WebP)
+```
 
 ## Run locally
 Open `index.html` in a browser, or serve the folder:
