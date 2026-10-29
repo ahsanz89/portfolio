@@ -316,3 +316,4 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
   .cue i{animation:none}
   body{transition:none}
 }
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-stopped{overflow:hidden}
