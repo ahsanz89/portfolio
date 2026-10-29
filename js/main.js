@@ -227,3 +227,71 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ if (anim) ST.refresh(); else buildThread(); });
   buildThread();
 })();
+
+/* selected work: tabs, hover preview, screens loading one by one, stacking cards */
+(function () {
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var G = window.gsap, ST = window.ScrollTrigger;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  $$('.selw .tabs').forEach(function (box) {
+    var tabs = $$('[role="tab"]', box), ink = box.querySelector('.tab-ink');
+    function place(t) { ink.style.left = t.offsetLeft + 'px'; ink.style.width = t.offsetWidth + 'px'; }
+    function select(t, focus) {
+      tabs.forEach(function (x) {
+        var on = x === t;
+        x.setAttribute('aria-selected', on ? 'true' : 'false');
+        x.tabIndex = on ? 0 : -1;
+        document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+      });
+      place(t); if (focus) t.focus();
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t); });
+      t.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true);
+      });
+    });
+    place(tabs[0]);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { place(box.querySelector('[aria-selected="true"]')); });
+    addEventListener('resize', function () { place(box.querySelector('[aria-selected="true"]')); });
+  });
+
+  var peek = document.getElementById('peek');
+  if (peek && finePointer) {
+    var peekImg = peek.querySelector('img');
+    var px = G ? G.quickTo(peek, 'x', { duration: 0.5, ease: 'power3' }) : null;
+    var py = G ? G.quickTo(peek, 'y', { duration: 0.5, ease: 'power3' }) : null;
+    $$('#index a').forEach(function (a) {
+      a.addEventListener('pointerenter', function () { peekImg.src = a.getAttribute('data-img'); peek.classList.add('on'); });
+      a.addEventListener('pointerleave', function () { peek.classList.remove('on'); });
+      a.addEventListener('pointermove', function (e) {
+        var x = e.clientX + 28, y = e.clientY - 120;
+        if (px) { px(x); py(y); } else { peek.style.transform = 'translate(' + x + 'px,' + y + 'px)'; }
+      });
+    });
+  }
+
+  if (!G || !ST || reduce) return;
+  G.from('#index li', { y: 40, opacity: 0, duration: 0.8, stagger: 0.05, ease: 'power3.out', scrollTrigger: { trigger: '#index', start: 'top 85%' } });
+  $$('.selw .card').forEach(function (c) {
+    G.from($$('.frame, .phone, .lens', c), {
+      y: 120, rotate: function (k) { return (k % 2 ? 3 : -3); }, opacity: 0, duration: 1.1, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: c, start: 'top 75%' }
+    });
+  });
+  G.matchMedia().add('(min-width: 901px) and (min-height: 561px)', function () {
+    var cards = $$('.selw .card');
+    cards.forEach(function (c, i) {
+      if (i === cards.length - 1) return;
+      G.fromTo(c, { scale: 1, filter: 'brightness(1)' }, {
+        scale: 0.94, filter: 'brightness(0.62)', ease: 'none', immediateRender: false,
+        scrollTrigger: { trigger: cards[i + 1], start: 'top bottom', end: 'top top+=' + (parseInt(getComputedStyle(c).top, 10) || 84), scrub: true }
+      });
+    });
+  });
+  addEventListener('load', function () { ST.refresh(); });
+})();
