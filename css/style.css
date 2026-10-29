@@ -317,3 +317,5 @@ dialog .x{position:sticky;top:0;float:right;margin:10px;font:500 12px var(--f-mo
   body{transition:none}
 }
 html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-stopped{overflow:hidden}
+.hd .r a{white-space:nowrap}
+@media (max-width:560px){.hd .pct{display:none}.hd .r{gap:16px}.hd .logo{font-size:17px}}
